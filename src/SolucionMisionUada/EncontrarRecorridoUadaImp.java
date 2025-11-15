@@ -10,11 +10,17 @@ import java.util.ArrayList;
 
 public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
+    private ArrayList<Decision> mejorSecuencia;
+    private double tiempoMinimoLogrado;
 
+    // Variables para no tener que pasarlas en cada llamada recursiva
+    private ArrayList<Desplazamiento> todosLosDesplazamientos;
+    private Estacion estacionFinal; // El Aula 633
 
-    /**
-    * Funcion ya viene creada
-    * */
+    private long podaPorTiempo;
+    private long podaPorBateria;
+    private long podaPorRepetido;
+    private long podaPorNoObligatorIOS;
 @Override
     public ArrayList<Decision> encontrarSecuenciaRecorridoUada(
             int bateriaInicial,
@@ -23,51 +29,179 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
             ArrayList<Estacion> lugaresObligatorios,
             ArrayList<Desplazamiento> desplazamientos) {
 
-        ArrayList<Decision> secuenciaDecisiones = new ArrayList<>();
 
-        System.out.println("= INICIO DE MISION UADA =");
-        System.out.println("Batería inicial: " + bateriaInicial + "%");
-        System.out.println("Origen: " + origen.getNombre());
-        System.out.println("------------------------------");
+    this.estacionFinal = origen;
+    this.mejorSecuencia = new ArrayList<>();
+    this.tiempoMinimoLogrado = Double.MAX_VALUE; // Equivale a "infinito"
+    this.todosLosDesplazamientos = desplazamientos;
+    this.podaPorTiempo = 0;
+    this.podaPorBateria = 0;
+    this.podaPorRepetido = 0;
+    this.podaPorNoObligatorIOS = 0;
+    ArrayList<Decision> recorridoActual = new ArrayList<>();
+    ArrayList<Estacion> obligatoriosRestantes = new ArrayList<>(lugaresObligatorios);
+    ArrayList<Estacion> visitados = new ArrayList<>();
+    visitados.add(origen);
 
-        // 🔹 Recorremos todos los desplazamientos que salen del origen
-        for (Desplazamiento d : desplazamientos) {
-            if (d.getOrigen().equals(origen)) {
-                System.out.println("Desde " + d.getOrigen().getNombre() +
-                                   " hacia " + d.getDestino().getNombre());
 
-                // 🔹 Para cada movimiento permitido en ese desplazamiento
+    misionUada(
+            bateriaInicial,
+            origen, // Estación actual
+            recorridoActual,
+            obligatoriosRestantes,
+            visitados,
+            0.0 // Tiempo acumulado inicial
+    );
+    System.out.println("= REPORTE DE PODAS =");
+    System.out.println("-> Caminos podados por Batería: " + this.podaPorBateria);
+    System.out.println("-> Caminos podados por Tiempo (peor a la mejor): " + this.podaPorTiempo);
+    System.out.println("-> Caminos podados por Lugar Repetido: " + this.podaPorRepetido);
+    System.out.println("-> Caminos podados por Fin sin Obligatorios: " + this.podaPorNoObligatorIOS);
+    System.out.println("======================");
+    System.out.println("= FIN DE MISION UADA =");
+
+    if (mejorSecuencia.isEmpty()) {
+        System.out.println("No se encontró una solución válida.");
+    } else {
+        System.out.println("Mejor tiempo encontrado: " + this.tiempoMinimoLogrado + "s");
+    }
+    return this.mejorSecuencia;
+}
+
+
+    private void misionUada(double bateriaActual,
+                            Estacion estacionActual,
+                            ArrayList<Decision> recorridoActual,
+                            ArrayList<Estacion> obligatoriosRestantes,
+                            ArrayList<Estacion> visitados,
+                            double tiempoAcumulado){
+
+
+        for (Desplazamiento d : this.todosLosDesplazamientos) {
+
+
+            if (d.getOrigen().equals(estacionActual)) {
+
+
+
+
                 for (Movimiento m : d.getMovimientosPermitidos()) {
-                    double[] tiempoYGasto = CalcularGastoYTiempo(d, m);
-                    double tiempo = tiempoYGasto[0];
-                    double gasto = tiempoYGasto[1];
-                    double nuevaBateria = bateriaInicial - gasto;
 
-                    System.out.println("   Movimiento: " + m +
-                                       " | Tiempo: " + tiempo +
-                                       " | Gasto: " + gasto +
-                                       " | Batería restante: " + nuevaBateria);
 
-                    // 🔹 Crear una "Decision" de ejemplo (con enteros como pide la librería)
-                    Decision decision = new Decision(
-                            d.getOrigen(),
-                            d.getDestino(),
-                            m,
-                            (int) Math.round(nuevaBateria),   // conversión a int
-                            (int) Math.round(tiempo)          // conversión a int
-                    );
+                    double[] calculos = CalcularGastoYTiempo(d, m);
+                    double tiempoMovimiento = calculos[0];
+                    double gastoBateria = calculos[1];
 
-                    secuenciaDecisiones.add(decision);
+                    double nuevoTiempo = tiempoAcumulado + tiempoMovimiento;
+                    double nuevaBateria = bateriaActual - gastoBateria;
 
-                        secuenciaDecisiones.add(decision);
+
+                    if (nuevaBateria > 0 && nuevoTiempo < this.tiempoMinimoLogrado) {
+                        Estacion siguienteEstacion = d.getDestino();
+
+                        double recarga = RecargarSiEsAula(siguienteEstacion);
+
+
+                        if (nuevaBateria + recarga > 100) {
+                            nuevaBateria = 100.0;
+                        } else {
+                            nuevaBateria += recarga;
+                        }
+
+
+
+
+                        if (siguienteEstacion.equals(this.estacionFinal)) {
+
+
+                            if (obligatoriosRestantes.isEmpty()) {
+
+
+                                if (nuevoTiempo < this.tiempoMinimoLogrado) {
+
+                                    this.tiempoMinimoLogrado = nuevoTiempo;
+
+
+                                    Decision ultimaDecision = new Decision(
+                                            estacionActual,
+                                            siguienteEstacion,
+                                            m,
+                                            (int) Math.round(nuevaBateria),
+                                            (int) Math.round(nuevoTiempo)
+                                    );
+                                    recorridoActual.add(ultimaDecision);
+                                    this.mejorSecuencia = new ArrayList<>(recorridoActual);
+
+
+                                    recorridoActual.remove(recorridoActual.size() - 1);
+                                }
+                            }else {
+                                // --- PODA 4: LLEGÓ A LA META PERO FALTAN OBLIGATORIOS ---
+                                this.podaPorNoObligatorIOS++;
+                            }
+
+
+                        } else if (!visitados.contains(siguienteEstacion)) {
+
+
+
+                            Decision decision = new Decision(
+                                    estacionActual,
+                                    siguienteEstacion,
+                                    m,
+                                    (int) Math.round(nuevaBateria),
+                                    (int) Math.round(nuevoTiempo)
+                            );
+                            recorridoActual.add(decision);
+                            visitados.add(siguienteEstacion);
+
+                            boolean fueEliminado = false;
+
+                            if (obligatoriosRestantes.contains(siguienteEstacion)) {
+                                obligatoriosRestantes.remove(siguienteEstacion);
+                                fueEliminado = true;
+                            }
+
+
+                            misionUada(
+                                    nuevaBateria,
+                                    siguienteEstacion,
+                                    recorridoActual,
+                                    obligatoriosRestantes,
+                                    visitados,
+                                    nuevoTiempo
+                            );
+
+
+                            recorridoActual.remove(recorridoActual.size() - 1);
+                            visitados.remove(siguienteEstacion);
+
+
+                            if (fueEliminado) {
+                                obligatoriosRestantes.add(siguienteEstacion);
+                            }
+                        }else {
+                            // --- PODA 3: LUGAR REPETIDO ---
+                            // (El else del 'if (!visitados.contains(siguienteEstacion))')
+                            this.podaPorRepetido++;
+                        }
+
+                    }else {
+                        // --- PODA 1 Y 2: BATERÍA O TIEMPO ---
+                        // (El else del 'if (nuevaBateria > 0 && nuevoTiempo < this.tiempoMinimoLogrado)')
+
+
+                        if (nuevaBateria <= 0) {
+                            this.podaPorBateria++;
+                        } else if (nuevoTiempo >= this.tiempoMinimoLogrado) {
+                            // Solo contamos la poda por tiempo si la batería estaba OK
+                            this.podaPorTiempo++;
+                        }
+                    }
+
                 }
-
-                System.out.println("------------------------------");
             }
         }
-
-        System.out.println("=== FIN DE MISION UADA ===");
-        return secuenciaDecisiones;
     }
 
 
