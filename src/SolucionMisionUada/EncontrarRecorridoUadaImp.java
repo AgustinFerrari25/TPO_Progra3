@@ -63,7 +63,9 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
     if (mejorSecuencia.isEmpty()) {
         System.out.println("No se encontró una solución válida.");
     } else {
+        Decision ultimaDecision = mejorSecuencia.get(mejorSecuencia.size() - 1);
         System.out.println("Mejor tiempo encontrado: " + this.tiempoMinimoLogrado + "s");
+        System.out.println("Batería restante final: " + ultimaDecision.getBateriaRemanente() + "%");
     }
     return this.mejorSecuencia;
 }
