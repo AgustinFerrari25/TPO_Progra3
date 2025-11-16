@@ -2,148 +2,64 @@
 
 Decision numero 1
 Origen: Aula 633
-Destino: Aula 203
-Movimiento empleado: CAMINAR
-Bateria Remanente: 94
-Tiempo Acumulado: 450 segundos 
+Destino: Molinete Lima 3
+Movimiento empleado: SALTAR
+Bateria Remanente: 85
+Tiempo Acumulado: 400 segundos 
 
 Decision numero 2
-Origen: Aula 203
-Destino: Aula 402
+Origen: Molinete Lima 3
+Destino: Starbucks
 Movimiento empleado: SALTAR
-Bateria Remanente: 93
-Tiempo Acumulado: 500 segundos 
+Bateria Remanente: 84
+Tiempo Acumulado: 450 segundos 
 
 Decision numero 3
-Origen: Aula 402
-Destino: Aula 502
-Movimiento empleado: SALTAR
-Bateria Remanente: 92
-Tiempo Acumulado: 550 segundos 
-
-Decision numero 4
-Origen: Aula 502
-Destino: Aula 302
-Movimiento empleado: SALTAR
-Bateria Remanente: 91
-Tiempo Acumulado: 620 segundos 
-
-Decision numero 5
-Origen: Aula 302
-Destino: Aula 304
-Movimiento empleado: SALTAR
-Bateria Remanente: 83
-Tiempo Acumulado: 875 segundos 
-
-Decision numero 6
-Origen: Aula 304
-Destino: Aula 204
-Movimiento empleado: SALTAR
-Bateria Remanente: 82
-Tiempo Acumulado: 925 segundos 
-
-Decision numero 7
-Origen: Aula 204
-Destino: EXPERIENCE
-Movimiento empleado: SALTAR
-Bateria Remanente: 80
-Tiempo Acumulado: 1000 segundos 
-
-Decision numero 8
-Origen: EXPERIENCE
+Origen: Starbucks
 Destino: Aula 613
 Movimiento empleado: SALTAR
-Bateria Remanente: 79
-Tiempo Acumulado: 1075 segundos 
+Bateria Remanente: 71
+Tiempo Acumulado: 850 segundos 
 
-Decision numero 9
+Decision numero 4
 Origen: Aula 613
-Destino: Biblioteca
-Movimiento empleado: PATAS_ARRIBA
-Bateria Remanente: 77
-Tiempo Acumulado: 1315 segundos 
-
-Decision numero 10
-Origen: Biblioteca
-Destino: Starbucks
-Movimiento empleado: CAMINAR
-Bateria Remanente: 75
-Tiempo Acumulado: 1435 segundos 
-
-Decision numero 11
-Origen: Starbucks
-Destino: Aula 201
+Destino: Aula 103
 Movimiento empleado: SALTAR
 Bateria Remanente: 70
-Tiempo Acumulado: 1600 segundos 
+Tiempo Acumulado: 900 segundos 
 
-Decision numero 12
-Origen: Aula 201
+Decision numero 5
+Origen: Aula 103
+Destino: Aula 101
+Movimiento empleado: SALTAR
+Bateria Remanente: 56
+Tiempo Acumulado: 1300 segundos 
+
+Decision numero 6
+Origen: Aula 101
+Destino: Aula 203
+Movimiento empleado: SALTAR
+Bateria Remanente: 55
+Tiempo Acumulado: 1350 segundos 
+
+Decision numero 7
+Origen: Aula 203
 Destino: Aula 102
 Movimiento empleado: SALTAR
-Bateria Remanente: 68
-Tiempo Acumulado: 1650 segundos 
+Bateria Remanente: 41
+Tiempo Acumulado: 1750 segundos 
 
-Decision numero 13
+Decision numero 8
 Origen: Aula 102
-Destino: Aula 504
+Destino: Aula 302
 Movimiento empleado: SALTAR
-Bateria Remanente: 59
-Tiempo Acumulado: 1950 segundos 
+Bateria Remanente: 40
+Tiempo Acumulado: 1800 segundos 
 
-Decision numero 14
-Origen: Aula 504
-Destino: Aula 501
-Movimiento empleado: PATAS_ARRIBA
-Bateria Remanente: 59
-Tiempo Acumulado: 2130 segundos 
-
-Decision numero 15
-Origen: Aula 501
-Destino: Molinete Lima 3
-Movimiento empleado: PATAS_ARRIBA
-Bateria Remanente: 58
-Tiempo Acumulado: 2310 segundos 
-
-Decision numero 16
-Origen: Molinete Lima 3
-Destino: Aula 301
-Movimiento empleado: SALTAR
-Bateria Remanente: 57
-Tiempo Acumulado: 2350 segundos 
-
-Decision numero 17
-Origen: Aula 301
-Destino: Aula 401
-Movimiento empleado: CAMINAR
-Bateria Remanente: 56
-Tiempo Acumulado: 2470 segundos 
-
-Decision numero 18
-Origen: Aula 401
-Destino: LA SEDE
-Movimiento empleado: SALTAR
-Bateria Remanente: 54
-Tiempo Acumulado: 2530 segundos 
-
-Decision numero 19
-Origen: LA SEDE
-Destino: GIMNASIO
-Movimiento empleado: SALTAR
-Bateria Remanente: 45
-Tiempo Acumulado: 2760 segundos 
-
-Decision numero 20
-Origen: GIMNASIO
-Destino: Aula 702
-Movimiento empleado: SALTAR
-Bateria Remanente: 45
-Tiempo Acumulado: 2820 segundos 
-
-Decision numero 21
-Origen: Aula 702
+Decision numero 9
+Origen: Aula 302
 Destino: Aula 633
 Movimiento empleado: CAMINAR
-Bateria Remanente: 45
-Tiempo Acumulado: 2980 segundos 
+Bateria Remanente: 34
+Tiempo Acumulado: 2300 segundos 
 
