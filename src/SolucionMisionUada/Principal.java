@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class Principal {
 
-
+    // Clase interna para guardar el mapa
     private static class MapaDePrueba {
         Estacion origen;
         ArrayList<Estacion> disponibles = new ArrayList<>();
@@ -29,26 +29,80 @@ public class Principal {
         int bateriaInicial;
     }
 
+    /**
+     * MÉTODO MAIN - ¡Ahora solo llama a las pruebas!
+     */
     public static void main(String[] args) {
 
-        // 1. Cargar los datos desde los archivos
-        // AHORA ESTOS ARCHIVOS DEBEN EXISTIR EN LA RAÍZ DE TU PROYECTO
-        MapaDePrueba mapa = cargarMapaDesdeArchivos(
-                "estaciones.csv",
-                "desplazamientos.csv",
-                "config_prueba_1.txt"
+        System.out.println("=== INICIO  PRUEBAS DEL TPO ===");
+
+        // Prueba 1: (O=2)
+        ejecutarPrueba(
+                "Prueba 1: (O=2)",
+                "estaciones_1.csv",
+                "desplazamientos_1.csv",
+                "config_prueba_1.txt",
+                "output_prueba_1.txt"
         );
 
+        // Prueba 2: (O=5)
+        ejecutarPrueba(
+                "Prueba 2: (O=5)",
+                "estaciones_2.csv",
+                "desplazamientos_2.csv",
+                "config_prueba_2.txt",
+                "output_prueba_2.txt"
+        );
+
+        // Prueba 3:(O=8)
+        ejecutarPrueba(
+                "Prueba 3:(O=8)",
+                "estaciones_3.csv",
+                "desplazamientos_3.csv",
+                "config_prueba_3.txt",
+                "output_prueba_3.txt"
+        );
+
+        // Prueba 4:(O=12)
+        ejecutarPrueba(
+                "Prueba 4:(O=12)",
+                "estaciones_4.csv",
+                "desplazamientos_4.csv",
+                "config_prueba_4.txt",
+                "output_prueba_4.txt"
+        );
+
+        // Prueba 5: (O=15)
+        ejecutarPrueba(
+                "Prueba 5: (O=15)",
+                "estaciones_5.csv",
+                "desplazamientos_5.csv",
+                "config_prueba_5.txt",
+                "output_prueba_5.txt"
+        );
+
+        System.out.println("\n=== FIN DE PRUEBAS ===");
+    }
+
+
+    private static void ejecutarPrueba(String nombrePrueba, String fEstaciones, String fDesplaz, String fConfig, String fOutput) {
+
+        System.out.println("\n----------------------------------------------------");
+        System.out.println("--- EJECUTANDO: " + nombrePrueba + " ---");
+        System.out.println("----------------------------------------------------");
+
+
+        MapaDePrueba mapa = cargarMapaDesdeArchivos(fEstaciones, fDesplaz, fConfig);
+
         if (mapa == null) {
-            System.err.println("Error al cargar el mapa. Saliendo.");
+            System.err.println("Error al cargar el mapa. Saliendo de esta prueba.");
             return;
         }
 
         System.out.println("=== INICIANDO EJECUCIÓN CON MAPA DE ARCHIVO ===");
         System.out.println("-> Origen: " + mapa.origen.getNombre());
-        System.out.println("-> Obligatorios: " + mapa.obligatorios.size() + " lugares.");
-        System.out.println("-> Desplazamientos cargados: " + mapa.desplazamientos.size());
         System.out.println("-> Batería inicial: " + mapa.bateriaInicial);
+        System.out.println("-> Desplazamientos cargados: " + mapa.desplazamientos.size());
 
         System.out.println("-> Obligatorios (" + mapa.obligatorios.size() + " lugares):");
         if (mapa.obligatorios.isEmpty()) {
@@ -59,8 +113,8 @@ public class Principal {
             }
         }
 
-        long startTime = System.nanoTime();
 
+        long startTime = System.nanoTime();
 
         EncontrarRecorridoUadaImp recorridoUada = new EncontrarRecorridoUadaImp();
         ArrayList<Decision> secuenciaDecisiones = recorridoUada.encontrarSecuenciaRecorridoUada(
@@ -71,7 +125,6 @@ public class Principal {
                 mapa.desplazamientos
         );
 
-
         long endTime = System.nanoTime();
         double tiempoDeEjecucionMs = (endTime - startTime) / 1_000_000.0;
 
@@ -79,26 +132,22 @@ public class Principal {
         System.out.println("Tiempo de ejecución del algoritmo: " + tiempoDeEjecucionMs + " ms");
 
 
-        // 3. Imprimir Resultados
-        imprimirSecuenciaDecisiones(secuenciaDecisiones, "output_prueba_1.txt");
+        imprimirSecuenciaDecisiones(secuenciaDecisiones, fOutput);
     }
 
-    /**
-     * Este es el "parser" que lee los archivos y crea los objetos.
-     */
+
+
     private static MapaDePrueba cargarMapaDesdeArchivos(String fEstaciones, String fDesplaz, String fConfig) {
 
         MapaDePrueba mapa = new MapaDePrueba();
-
         Map<String, Estacion> estacionesMap = new HashMap<>();
 
         try {
-
+            // --- 1. Leer estaciones.csv ---
             System.out.println("Leyendo " + fEstaciones + "...");
             try (BufferedReader br = new BufferedReader(new FileReader(fEstaciones))) {
                 String line;
-                br.readLine(); // Saltear la cabecera (idUnico,nombre,esAula,idNumerica)
-
+                br.readLine();
                 while ((line = br.readLine()) != null) {
                     String[] values = line.split(";");
                     if (values.length >= 4) {
@@ -106,16 +155,14 @@ public class Principal {
                         String nombre = values[1].trim();
                         boolean esAula = Boolean.parseBoolean(values[2].trim());
                         int idNum = Integer.parseInt(values[3].trim());
-
                         Estacion estacion = new Estacion(nombre, idNum, esAula);
-
                         estacionesMap.put(id, estacion);
                         mapa.disponibles.add(estacion);
                     }
                 }
             }
 
-            // --- 2. Leer config_prueba_1.txt ---
+            // --- 2. Leer config.txt ---
             System.out.println("Leyendo " + fConfig + "...");
             try (BufferedReader br = new BufferedReader(new FileReader(fConfig))) {
                 String line;
@@ -124,7 +171,6 @@ public class Principal {
                     if (parts.length == 2) {
                         String key = parts[0].trim();
                         String value = parts[1].trim();
-
                         switch (key) {
                             case "bateria":
                                 mapa.bateriaInicial = Integer.parseInt(value);
@@ -156,17 +202,14 @@ public class Principal {
             System.out.println("Leyendo " + fDesplaz + "...");
             try (BufferedReader br = new BufferedReader(new FileReader(fDesplaz))) {
                 String line;
-                br.readLine(); // Saltear la cabecera
-
+                br.readLine();
                 while ((line = br.readLine()) != null) {
                     String[] values = line.split(";");
                     if (values.length >= 3) {
                         Estacion origen = estacionesMap.get(values[0].trim());
                         Estacion destino = estacionesMap.get(values[1].trim());
                         int tiempoBase = Integer.parseInt(values[2].trim());
-
                         ArrayList<Movimiento> movimientos = new ArrayList<>();
-                        // Leer todos los movimientos (desde la columna 3 en adelante)
                         for (int i = 3; i < values.length; i++) {
                             String movStr = values[i].trim().toUpperCase();
                             if (!movStr.isEmpty()) {
@@ -177,7 +220,6 @@ public class Principal {
                                 }
                             }
                         }
-
                         if (origen != null && destino != null && !movimientos.isEmpty()) {
                             Desplazamiento d = new Desplazamiento(origen, destino, movimientos, tiempoBase);
                             mapa.desplazamientos.add(d);
@@ -190,7 +232,7 @@ public class Principal {
             return mapa;
 
         } catch (FileNotFoundException e) {
-            System.err.println("Error: Archivo no encontrado. Asegúrate que los archivos .csv y .txt están en la raíz del proyecto.");
+            System.err.println("Error: Archivo no encontrado. Asegúrate que " + fEstaciones + ", " + fDesplaz + " y " + fConfig + " están en la raíz del proyecto.");
             e.printStackTrace();
             return null;
         } catch (IOException e) {
@@ -204,10 +246,7 @@ public class Principal {
         }
     }
 
-    /**
-     * Escribe la secuencia de decisiones en un archivo de salida.
-     * (¡Actualicé esta función para que reciba el nombre del archivo!)
-     */
+
     public static void imprimirSecuenciaDecisiones(ArrayList<Decision> secuenciaDecisiones, String archivoSalida) {
         StringBuilder sb = new StringBuilder();
 

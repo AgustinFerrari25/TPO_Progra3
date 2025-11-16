@@ -1,0 +1,149 @@
+== MEJOR SECUENCIA DE DECISIONES ENCONTRADA ==
+
+Decision numero 1
+Origen: Aula 633
+Destino: Aula 103
+Movimiento empleado: PATAS_ARRIBA
+Bateria Remanente: 96
+Tiempo Acumulado: 620 segundos 
+
+Decision numero 2
+Origen: Aula 103
+Destino: Aula 503
+Movimiento empleado: SALTAR
+Bateria Remanente: 89
+Tiempo Acumulado: 860 segundos 
+
+Decision numero 3
+Origen: Aula 503
+Destino: Aula 204
+Movimiento empleado: SALTAR
+Bateria Remanente: 88
+Tiempo Acumulado: 910 segundos 
+
+Decision numero 4
+Origen: Aula 204
+Destino: EXPERIENCE
+Movimiento empleado: SALTAR
+Bateria Remanente: 86
+Tiempo Acumulado: 985 segundos 
+
+Decision numero 5
+Origen: EXPERIENCE
+Destino: SANTANDER
+Movimiento empleado: SALTAR
+Bateria Remanente: 83
+Tiempo Acumulado: 1060 segundos 
+
+Decision numero 6
+Origen: SANTANDER
+Destino: Aula 401
+Movimiento empleado: SALTAR
+Bateria Remanente: 82
+Tiempo Acumulado: 1120 segundos 
+
+Decision numero 7
+Origen: Aula 401
+Destino: Starbucks
+Movimiento empleado: CAMINAR
+Bateria Remanente: 79
+Tiempo Acumulado: 1270 segundos 
+
+Decision numero 8
+Origen: Starbucks
+Destino: Aula 201
+Movimiento empleado: SALTAR
+Bateria Remanente: 74
+Tiempo Acumulado: 1435 segundos 
+
+Decision numero 9
+Origen: Aula 201
+Destino: Aula 102
+Movimiento empleado: SALTAR
+Bateria Remanente: 72
+Tiempo Acumulado: 1485 segundos 
+
+Decision numero 10
+Origen: Aula 102
+Destino: Aula 202
+Movimiento empleado: SALTAR
+Bateria Remanente: 70
+Tiempo Acumulado: 1565 segundos 
+
+Decision numero 11
+Origen: Aula 202
+Destino: Aula 701
+Movimiento empleado: SALTAR
+Bateria Remanente: 65
+Tiempo Acumulado: 1760 segundos 
+
+Decision numero 12
+Origen: Aula 701
+Destino: Aula 403
+Movimiento empleado: SALTAR
+Bateria Remanente: 64
+Tiempo Acumulado: 1810 segundos 
+
+Decision numero 13
+Origen: Aula 403
+Destino: Aula 104
+Movimiento empleado: SALTAR
+Bateria Remanente: 63
+Tiempo Acumulado: 1885 segundos 
+
+Decision numero 14
+Origen: Aula 104
+Destino: Aula 203
+Movimiento empleado: CAMINAR
+Bateria Remanente: 59
+Tiempo Acumulado: 2175 segundos 
+
+Decision numero 15
+Origen: Aula 203
+Destino: Aula 402
+Movimiento empleado: SALTAR
+Bateria Remanente: 58
+Tiempo Acumulado: 2225 segundos 
+
+Decision numero 16
+Origen: Aula 402
+Destino: Aula 502
+Movimiento empleado: SALTAR
+Bateria Remanente: 58
+Tiempo Acumulado: 2275 segundos 
+
+Decision numero 17
+Origen: Aula 502
+Destino: Aula 302
+Movimiento empleado: SALTAR
+Bateria Remanente: 56
+Tiempo Acumulado: 2345 segundos 
+
+Decision numero 18
+Origen: Aula 302
+Destino: Aula 304
+Movimiento empleado: SALTAR
+Bateria Remanente: 48
+Tiempo Acumulado: 2600 segundos 
+
+Decision numero 19
+Origen: Aula 304
+Destino: Aula 101
+Movimiento empleado: CAMINAR
+Bateria Remanente: 47
+Tiempo Acumulado: 2710 segundos 
+
+Decision numero 20
+Origen: Aula 101
+Destino: Aula 303
+Movimiento empleado: SALTAR
+Bateria Remanente: 41
+Tiempo Acumulado: 2900 segundos 
+
+Decision numero 21
+Origen: Aula 303
+Destino: Aula 633
+Movimiento empleado: SALTAR
+Bateria Remanente: 34
+Tiempo Acumulado: 3150 segundos 
+

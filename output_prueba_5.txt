@@ -1,0 +1,170 @@
+== MEJOR SECUENCIA DE DECISIONES ENCONTRADA ==
+
+Decision numero 1
+Origen: Aula 633
+Destino: Aula 203
+Movimiento empleado: CAMINAR
+Bateria Remanente: 94
+Tiempo Acumulado: 450 segundos 
+
+Decision numero 2
+Origen: Aula 203
+Destino: Aula 402
+Movimiento empleado: SALTAR
+Bateria Remanente: 93
+Tiempo Acumulado: 500 segundos 
+
+Decision numero 3
+Origen: Aula 402
+Destino: Aula 613
+Movimiento empleado: SALTAR
+Bateria Remanente: 85
+Tiempo Acumulado: 760 segundos 
+
+Decision numero 4
+Origen: Aula 613
+Destino: Biblioteca
+Movimiento empleado: PATAS_ARRIBA
+Bateria Remanente: 84
+Tiempo Acumulado: 1000 segundos 
+
+Decision numero 5
+Origen: Biblioteca
+Destino: Aula 204
+Movimiento empleado: SALTAR
+Bateria Remanente: 77
+Tiempo Acumulado: 1205 segundos 
+
+Decision numero 6
+Origen: Aula 204
+Destino: EXPERIENCE
+Movimiento empleado: SALTAR
+Bateria Remanente: 74
+Tiempo Acumulado: 1280 segundos 
+
+Decision numero 7
+Origen: EXPERIENCE
+Destino: SANTANDER
+Movimiento empleado: SALTAR
+Bateria Remanente: 72
+Tiempo Acumulado: 1355 segundos 
+
+Decision numero 8
+Origen: SANTANDER
+Destino: Aula 401
+Movimiento empleado: SALTAR
+Bateria Remanente: 71
+Tiempo Acumulado: 1415 segundos 
+
+Decision numero 9
+Origen: Aula 401
+Destino: Starbucks
+Movimiento empleado: CAMINAR
+Bateria Remanente: 68
+Tiempo Acumulado: 1565 segundos 
+
+Decision numero 10
+Origen: Starbucks
+Destino: Aula 201
+Movimiento empleado: SALTAR
+Bateria Remanente: 63
+Tiempo Acumulado: 1730 segundos 
+
+Decision numero 11
+Origen: Aula 201
+Destino: Aula 102
+Movimiento empleado: SALTAR
+Bateria Remanente: 61
+Tiempo Acumulado: 1780 segundos 
+
+Decision numero 12
+Origen: Aula 102
+Destino: Aula 202
+Movimiento empleado: SALTAR
+Bateria Remanente: 59
+Tiempo Acumulado: 1860 segundos 
+
+Decision numero 13
+Origen: Aula 202
+Destino: Aula 103
+Movimiento empleado: PATAS_ARRIBA
+Bateria Remanente: 58
+Tiempo Acumulado: 2180 segundos 
+
+Decision numero 14
+Origen: Aula 103
+Destino: LA SEDE
+Movimiento empleado: CAMINAR
+Bateria Remanente: 56
+Tiempo Acumulado: 2290 segundos 
+
+Decision numero 15
+Origen: LA SEDE
+Destino: GIMNASIO
+Movimiento empleado: SALTAR
+Bateria Remanente: 47
+Tiempo Acumulado: 2520 segundos 
+
+Decision numero 16
+Origen: GIMNASIO
+Destino: Molinete Lima 3
+Movimiento empleado: CAMINAR
+Bateria Remanente: 45
+Tiempo Acumulado: 2660 segundos 
+
+Decision numero 17
+Origen: Molinete Lima 3
+Destino: Aula 301
+Movimiento empleado: SALTAR
+Bateria Remanente: 44
+Tiempo Acumulado: 2700 segundos 
+
+Decision numero 18
+Origen: Aula 301
+Destino: Aula 501
+Movimiento empleado: SALTAR
+Bateria Remanente: 37
+Tiempo Acumulado: 2945 segundos 
+
+Decision numero 19
+Origen: Aula 501
+Destino: Aula 503
+Movimiento empleado: CAMINAR
+Bateria Remanente: 36
+Tiempo Acumulado: 3045 segundos 
+
+Decision numero 20
+Origen: Aula 503
+Destino: Sala de Profesores
+Movimiento empleado: SALTAR
+Bateria Remanente: 34
+Tiempo Acumulado: 3110 segundos 
+
+Decision numero 21
+Origen: Sala de Profesores
+Destino: Aula 304
+Movimiento empleado: SALTAR
+Bateria Remanente: 33
+Tiempo Acumulado: 3175 segundos 
+
+Decision numero 22
+Origen: Aula 304
+Destino: Aula 403
+Movimiento empleado: SALTAR
+Bateria Remanente: 32
+Tiempo Acumulado: 3240 segundos 
+
+Decision numero 23
+Origen: Aula 403
+Destino: Aula 702
+Movimiento empleado: SALTAR
+Bateria Remanente: 31
+Tiempo Acumulado: 3315 segundos 
+
+Decision numero 24
+Origen: Aula 702
+Destino: Aula 633
+Movimiento empleado: CAMINAR
+Bateria Remanente: 31
+Tiempo Acumulado: 3475 segundos 
+

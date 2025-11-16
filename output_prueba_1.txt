@@ -2,141 +2,85 @@
 
 Decision numero 1
 Origen: Aula 633
-Destino: Aula 102
+Destino: Aula 403
 Movimiento empleado: SALTAR
-Bateria Remanente: 93
-Tiempo Acumulado: 200 segundos 
+Bateria Remanente: 90
+Tiempo Acumulado: 300 segundos 
 
 Decision numero 2
-Origen: Aula 102
-Destino: Biblioteca
-Movimiento empleado: SALTAR
-Bateria Remanente: 91
-Tiempo Acumulado: 265 segundos 
-
-Decision numero 3
-Origen: Biblioteca
-Destino: Aula 103
+Origen: Aula 403
+Destino: Aula 104
 Movimiento empleado: SALTAR
 Bateria Remanente: 89
-Tiempo Acumulado: 340 segundos 
+Tiempo Acumulado: 375 segundos 
 
-Decision numero 4
-Origen: Aula 103
-Destino: Aula 203
-Movimiento empleado: SALTAR
-Bateria Remanente: 82
-Tiempo Acumulado: 555 segundos 
-
-Decision numero 5
-Origen: Aula 203
-Destino: Aula 204
+Decision numero 3
+Origen: Aula 104
+Destino: Sala de Profesores
 Movimiento empleado: SALTAR
 Bateria Remanente: 81
-Tiempo Acumulado: 615 segundos 
+Tiempo Acumulado: 590 segundos 
+
+Decision numero 4
+Origen: Sala de Profesores
+Destino: Aula 304
+Movimiento empleado: SALTAR
+Bateria Remanente: 80
+Tiempo Acumulado: 655 segundos 
+
+Decision numero 5
+Origen: Aula 304
+Destino: Aula 204
+Movimiento empleado: SALTAR
+Bateria Remanente: 79
+Tiempo Acumulado: 705 segundos 
 
 Decision numero 6
 Origen: Aula 204
-Destino: Aula 304
+Destino: EXPERIENCE
 Movimiento empleado: SALTAR
-Bateria Remanente: 75
-Tiempo Acumulado: 820 segundos 
+Bateria Remanente: 76
+Tiempo Acumulado: 780 segundos 
 
 Decision numero 7
-Origen: Aula 304
-Destino: Aula 401
+Origen: EXPERIENCE
+Destino: SANTANDER
 Movimiento empleado: SALTAR
 Bateria Remanente: 74
-Tiempo Acumulado: 865 segundos 
+Tiempo Acumulado: 855 segundos 
 
 Decision numero 8
-Origen: Aula 401
-Destino: Aula 501
-Movimiento empleado: CAMINAR
-Bateria Remanente: 68
-Tiempo Acumulado: 1335 segundos 
+Origen: SANTANDER
+Destino: Aula 401
+Movimiento empleado: SALTAR
+Bateria Remanente: 72
+Tiempo Acumulado: 915 segundos 
 
 Decision numero 9
-Origen: Aula 501
-Destino: Aula 701
+Origen: Aula 401
+Destino: Starbucks
 Movimiento empleado: CAMINAR
-Bateria Remanente: 61
-Tiempo Acumulado: 1825 segundos 
+Bateria Remanente: 70
+Tiempo Acumulado: 1065 segundos 
 
 Decision numero 10
-Origen: Aula 701
-Destino: Molinete Lima 3
+Origen: Starbucks
+Destino: Aula 502
 Movimiento empleado: SALTAR
-Bateria Remanente: 52
-Tiempo Acumulado: 2080 segundos 
+Bateria Remanente: 64
+Tiempo Acumulado: 1270 segundos 
 
 Decision numero 11
-Origen: Molinete Lima 3
-Destino: Aula 613
+Origen: Aula 502
+Destino: Aula 702
 Movimiento empleado: CAMINAR
-Bateria Remanente: 52
-Tiempo Acumulado: 2160 segundos 
+Bateria Remanente: 58
+Tiempo Acumulado: 1700 segundos 
 
 Decision numero 12
-Origen: Aula 613
-Destino: Aula 104
-Movimiento empleado: CAMINAR
-Bateria Remanente: 45
-Tiempo Acumulado: 2660 segundos 
-
-Decision numero 13
-Origen: Aula 104
-Destino: Aula 201
-Movimiento empleado: PATAS_ARRIBA
-Bateria Remanente: 44
-Tiempo Acumulado: 2840 segundos 
-
-Decision numero 14
-Origen: Aula 201
-Destino: Aula 301
-Movimiento empleado: SALTAR
-Bateria Remanente: 37
-Tiempo Acumulado: 3070 segundos 
-
-Decision numero 15
-Origen: Aula 301
-Destino: Aula 302
-Movimiento empleado: CAMINAR
-Bateria Remanente: 36
-Tiempo Acumulado: 3170 segundos 
-
-Decision numero 16
-Origen: Aula 302
-Destino: Aula 402
-Movimiento empleado: SALTAR
-Bateria Remanente: 29
-Tiempo Acumulado: 3385 segundos 
-
-Decision numero 17
-Origen: Aula 402
-Destino: Sala de Profesores
-Movimiento empleado: SALTAR
-Bateria Remanente: 27
-Tiempo Acumulado: 3455 segundos 
-
-Decision numero 18
-Origen: Sala de Profesores
-Destino: Laboratorio 2
-Movimiento empleado: SALTAR
-Bateria Remanente: 19
-Tiempo Acumulado: 3655 segundos 
-
-Decision numero 19
-Origen: Laboratorio 2
-Destino: Terraza
-Movimiento empleado: CAMINAR
-Bateria Remanente: 13
-Tiempo Acumulado: 4055 segundos 
-
-Decision numero 20
-Origen: Terraza
+Origen: Aula 702
 Destino: Aula 633
-Movimiento empleado: SALTAR
-Bateria Remanente: 12
-Tiempo Acumulado: 4135 segundos 
+Movimiento empleado: CAMINAR
+Bateria Remanente: 58
+Tiempo Acumulado: 1860 segundos 
 
