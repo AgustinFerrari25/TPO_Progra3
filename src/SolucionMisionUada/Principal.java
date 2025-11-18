@@ -5,29 +5,14 @@ import MisionUada.Desplazamiento;
 import MisionUada.Estacion;
 import MisionUada.Movimiento;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class Principal {
-
-    // Clase interna para guardar el mapa
-    private static class MapaDePrueba {
-        Estacion origen;
-        ArrayList<Estacion> disponibles = new ArrayList<>();
-        ArrayList<Estacion> obligatorios = new ArrayList<>();
-        ArrayList<Desplazamiento> desplazamientos = new ArrayList<>();
-        int bateriaInicial;
-    }
 
     /**
      * MÉTODO MAIN - ¡Ahora solo llama a las pruebas!
@@ -36,54 +21,14 @@ public class Principal {
 
         System.out.println("=== INICIO  PRUEBAS DEL TPO ===");
 
-        // Prueba 1: (O=2)
-        ejecutarPrueba(
-                "Prueba 1: (O=2)",
-                "estaciones_1.csv",
-                "desplazamientos_1.csv",
-                "config_prueba_1.txt",
-                "output_prueba_1.txt"
-        );
+        final String baseOutput = "./testing_files/outputs/output_prueba_", baseConfig = "./testing_files/configs/config_prueba_", baseDesplazamientos = "./testing_files/desplazamientos/desplazamientos_", baseEstaciones = "./testing_files/estaciones/estaciones_";
 
-        // Prueba 2: (O=5)
-        ejecutarPrueba(
-                "Prueba 2: (O=5)",
-                "estaciones_2.csv",
-                "desplazamientos_2.csv",
-                "config_prueba_2.txt",
-                "output_prueba_2.txt"
-        );
-
-        // Prueba 3:(O=8)
-        ejecutarPrueba(
-                "Prueba 3:(O=8)",
-                "estaciones_3.csv",
-                "desplazamientos_3.csv",
-                "config_prueba_3.txt",
-                "output_prueba_3.txt"
-        );
-
-        // Prueba 4:(O=12)
-        ejecutarPrueba(
-                "Prueba 4:(O=12)",
-                "estaciones_4.csv",
-                "desplazamientos_4.csv",
-                "config_prueba_4.txt",
-                "output_prueba_4.txt"
-        );
-
-        // Prueba 5: (O=15)
-        ejecutarPrueba(
-                "Prueba 5: (O=15)",
-                "estaciones_5.csv",
-                "desplazamientos_5.csv",
-                "config_prueba_5.txt",
-                "output_prueba_5.txt"
-        );
+        for (int i=1; i<=7; i++) {
+            ejecutarPrueba("Prueba " +i+":", baseEstaciones +i+".csv", baseDesplazamientos + i +".csv", baseConfig + i +".txt", baseOutput + i +".txt");
+        }
 
         System.out.println("\n=== FIN DE PRUEBAS ===");
     }
-
 
     private static void ejecutarPrueba(String nombrePrueba, String fEstaciones, String fDesplaz, String fConfig, String fOutput) {
 
@@ -117,13 +62,7 @@ public class Principal {
         long startTime = System.nanoTime();
 
         EncontrarRecorridoUadaImp recorridoUada = new EncontrarRecorridoUadaImp();
-        ArrayList<Decision> secuenciaDecisiones = recorridoUada.encontrarSecuenciaRecorridoUada(
-                mapa.bateriaInicial,
-                mapa.origen,
-                mapa.disponibles,
-                mapa.obligatorios,
-                mapa.desplazamientos
-        );
+        ArrayList<Decision> secuenciaDecisiones = recorridoUada.encontrarSecuenciaRecorridoUada(mapa.bateriaInicial, mapa.origen, mapa.disponibles, mapa.obligatorios, mapa.desplazamientos);
 
         long endTime = System.nanoTime();
         double tiempoDeEjecucionMs = (endTime - startTime) / 1_000_000.0;
@@ -134,8 +73,6 @@ public class Principal {
 
         imprimirSecuenciaDecisiones(secuenciaDecisiones, fOutput);
     }
-
-
 
     private static MapaDePrueba cargarMapaDesdeArchivos(String fEstaciones, String fDesplaz, String fConfig) {
 
@@ -246,7 +183,6 @@ public class Principal {
         }
     }
 
-
     public static void imprimirSecuenciaDecisiones(ArrayList<Decision> secuenciaDecisiones, String archivoSalida) {
         StringBuilder sb = new StringBuilder();
 
@@ -256,15 +192,10 @@ public class Principal {
             sb.append("== MEJOR SECUENCIA DE DECISIONES ENCONTRADA ==\n\n");
         }
 
-        for (int i=0; i < secuenciaDecisiones.size();i++) {
+        for (int i = 0; i < secuenciaDecisiones.size(); i++) {
             Decision decision = secuenciaDecisiones.get(i);
-            int indice = i+1;
-            String decisionString = "Decision numero "+indice+"\n"+
-                    "Origen: "+decision.getOrigen().getNombre()+"\n"+
-                    "Destino: "+decision.getDestino().getNombre()+"\n"+
-                    "Movimiento empleado: "+decision.getMovimientoEmpleado().toString()+"\n"+
-                    "Bateria Remanente: "+decision.getBateriaRemanente()+"\n"+
-                    "Tiempo Acumulado: "+decision.getTiempoAcumulado()+" segundos \n\n";
+            int indice = i + 1;
+            String decisionString = "Decision numero " + indice + "\n" + "Origen: " + decision.getOrigen().getNombre() + "\n" + "Destino: " + decision.getDestino().getNombre() + "\n" + "Movimiento empleado: " + decision.getMovimientoEmpleado().toString() + "\n" + "Bateria Remanente: " + decision.getBateriaRemanente() + "\n" + "Tiempo Acumulado: " + decision.getTiempoAcumulado() + " segundos \n\n";
             sb.append(decisionString);
         }
 
@@ -276,5 +207,14 @@ public class Principal {
         } catch (IOException e) {
             System.err.println("Error al escribir el archivo TXT: " + e.getMessage());
         }
+    }
+
+    // Clase interna para guardar el mapa
+    private static class MapaDePrueba {
+        Estacion origen;
+        ArrayList<Estacion> disponibles = new ArrayList<>();
+        ArrayList<Estacion> obligatorios = new ArrayList<>();
+        ArrayList<Desplazamiento> desplazamientos = new ArrayList<>();
+        int bateriaInicial;
     }
 }

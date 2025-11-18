@@ -1,3 +1,0 @@
-bateria=100
-origen=e0
-obligatorios=e1,e7,e12,e15

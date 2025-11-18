@@ -1,0 +1,492 @@
+== MEJOR SECUENCIA DE DECISIONES ENCONTRADA ==
+
+Decision numero 1
+Origen: Aula 633
+Destino: Aula 101
+Movimiento empleado: CAMINAR
+Bateria Remanente: 99.066666
+Tiempo Acumulado: 80.0 segundos 
+
+Decision numero 2
+Origen: Aula 101
+Destino: Aula 202
+Movimiento empleado: CAMINAR
+Bateria Remanente: 98.166664
+Tiempo Acumulado: 170.0 segundos 
+
+Decision numero 3
+Origen: Aula 202
+Destino: Oficina 303
+Movimiento empleado: CAMINAR
+Bateria Remanente: 96.5
+Tiempo Acumulado: 270.0 segundos 
+
+Decision numero 4
+Origen: Oficina 303
+Destino: Hall 4
+Movimiento empleado: CAMINAR
+Bateria Remanente: 94.666664
+Tiempo Acumulado: 380.0 segundos 
+
+Decision numero 5
+Origen: Hall 4
+Destino: Aula 105
+Movimiento empleado: CAMINAR
+Bateria Remanente: 93.86667
+Tiempo Acumulado: 500.0 segundos 
+
+Decision numero 6
+Origen: Aula 105
+Destino: Aula 206
+Movimiento empleado: CAMINAR
+Bateria Remanente: 93.933334
+Tiempo Acumulado: 580.0 segundos 
+
+Decision numero 7
+Origen: Aula 206
+Destino: Oficina 307
+Movimiento empleado: CAMINAR
+Bateria Remanente: 92.433334
+Tiempo Acumulado: 670.0 segundos 
+
+Decision numero 8
+Origen: Oficina 307
+Destino: Hall 8
+Movimiento empleado: CAMINAR
+Bateria Remanente: 90.76667
+Tiempo Acumulado: 770.0 segundos 
+
+Decision numero 9
+Origen: Hall 8
+Destino: Aula 109
+Movimiento empleado: CAMINAR
+Bateria Remanente: 90.933334
+Tiempo Acumulado: 880.0 segundos 
+
+Decision numero 10
+Origen: Aula 109
+Destino: Aula 210
+Movimiento empleado: CAMINAR
+Bateria Remanente: 89.333336
+Tiempo Acumulado: 1000.0 segundos 
+
+Decision numero 11
+Origen: Aula 210
+Destino: Oficina 311
+Movimiento empleado: CAMINAR
+Bateria Remanente: 88.0
+Tiempo Acumulado: 1080.0 segundos 
+
+Decision numero 12
+Origen: Oficina 311
+Destino: Hall 12
+Movimiento empleado: CAMINAR
+Bateria Remanente: 86.5
+Tiempo Acumulado: 1170.0 segundos 
+
+Decision numero 13
+Origen: Hall 12
+Destino: Aula 113
+Movimiento empleado: CAMINAR
+Bateria Remanente: 85.833336
+Tiempo Acumulado: 1270.0 segundos 
+
+Decision numero 14
+Origen: Aula 113
+Destino: Aula 214
+Movimiento empleado: CAMINAR
+Bateria Remanente: 85.2
+Tiempo Acumulado: 1380.0 segundos 
+
+Decision numero 15
+Origen: Aula 214
+Destino: Oficina 315
+Movimiento empleado: CAMINAR
+Bateria Remanente: 83.2
+Tiempo Acumulado: 1500.0 segundos 
+
+Decision numero 16
+Origen: Oficina 315
+Destino: Hall 16
+Movimiento empleado: CAMINAR
+Bateria Remanente: 81.86667
+Tiempo Acumulado: 1580.0 segundos 
+
+Decision numero 17
+Origen: Hall 16
+Destino: Aula 117
+Movimiento empleado: CAMINAR
+Bateria Remanente: 82.166664
+Tiempo Acumulado: 1670.0 segundos 
+
+Decision numero 18
+Origen: Aula 117
+Destino: Aula 218
+Movimiento empleado: CAMINAR
+Bateria Remanente: 82.5
+Tiempo Acumulado: 1770.0 segundos 
+
+Decision numero 19
+Origen: Aula 218
+Destino: Oficina 319
+Movimiento empleado: CAMINAR
+Bateria Remanente: 80.666664
+Tiempo Acumulado: 1880.0 segundos 
+
+Decision numero 20
+Origen: Oficina 319
+Destino: Hall 20
+Movimiento empleado: CAMINAR
+Bateria Remanente: 78.666664
+Tiempo Acumulado: 2000.0 segundos 
+
+Decision numero 21
+Origen: Hall 20
+Destino: Aula 121
+Movimiento empleado: CAMINAR
+Bateria Remanente: 78.13333
+Tiempo Acumulado: 2080.0 segundos 
+
+Decision numero 22
+Origen: Aula 121
+Destino: Aula 222
+Movimiento empleado: CAMINAR
+Bateria Remanente: 77.63333
+Tiempo Acumulado: 2170.0 segundos 
+
+Decision numero 23
+Origen: Aula 222
+Destino: Oficina 323
+Movimiento empleado: CAMINAR
+Bateria Remanente: 75.96667
+Tiempo Acumulado: 2270.0 segundos 
+
+Decision numero 24
+Origen: Oficina 323
+Destino: Hall 24
+Movimiento empleado: CAMINAR
+Bateria Remanente: 74.13333
+Tiempo Acumulado: 2380.0 segundos 
+
+Decision numero 25
+Origen: Hall 24
+Destino: Aula 125
+Movimiento empleado: CAMINAR
+Bateria Remanente: 73.73333
+Tiempo Acumulado: 2500.0 segundos 
+
+Decision numero 26
+Origen: Aula 125
+Destino: Aula 226
+Movimiento empleado: CAMINAR
+Bateria Remanente: 74.2
+Tiempo Acumulado: 2580.0 segundos 
+
+Decision numero 27
+Origen: Aula 226
+Destino: Oficina 327
+Movimiento empleado: CAMINAR
+Bateria Remanente: 72.7
+Tiempo Acumulado: 2670.0 segundos 
+
+Decision numero 28
+Origen: Oficina 327
+Destino: Hall 28
+Movimiento empleado: CAMINAR
+Bateria Remanente: 71.03333
+Tiempo Acumulado: 2770.0 segundos 
+
+Decision numero 29
+Origen: Hall 28
+Destino: Aula 129
+Movimiento empleado: CAMINAR
+Bateria Remanente: 71.6
+Tiempo Acumulado: 2880.0 segundos 
+
+Decision numero 30
+Origen: Aula 129
+Destino: Aula 230
+Movimiento empleado: CAMINAR
+Bateria Remanente: 70.4
+Tiempo Acumulado: 3000.0 segundos 
+
+Decision numero 31
+Origen: Aula 230
+Destino: Oficina 331
+Movimiento empleado: CAMINAR
+Bateria Remanente: 69.066666
+Tiempo Acumulado: 3080.0 segundos 
+
+Decision numero 32
+Origen: Oficina 331
+Destino: Hall 32
+Movimiento empleado: CAMINAR
+Bateria Remanente: 67.566666
+Tiempo Acumulado: 3170.0 segundos 
+
+Decision numero 33
+Origen: Hall 32
+Destino: Aula 133
+Movimiento empleado: CAMINAR
+Bateria Remanente: 67.3
+Tiempo Acumulado: 3270.0 segundos 
+
+Decision numero 34
+Origen: Aula 133
+Destino: Aula 234
+Movimiento empleado: CAMINAR
+Bateria Remanente: 67.066666
+Tiempo Acumulado: 3380.0 segundos 
+
+Decision numero 35
+Origen: Aula 234
+Destino: Oficina 335
+Movimiento empleado: CAMINAR
+Bateria Remanente: 65.066666
+Tiempo Acumulado: 3500.0 segundos 
+
+Decision numero 36
+Origen: Oficina 335
+Destino: Hall 36
+Movimiento empleado: CAMINAR
+Bateria Remanente: 63.733334
+Tiempo Acumulado: 3580.0 segundos 
+
+Decision numero 37
+Origen: Hall 36
+Destino: Aula 137
+Movimiento empleado: CAMINAR
+Bateria Remanente: 64.433334
+Tiempo Acumulado: 3670.0 segundos 
+
+Decision numero 38
+Origen: Aula 137
+Destino: Aula 238
+Movimiento empleado: CAMINAR
+Bateria Remanente: 65.166664
+Tiempo Acumulado: 3770.0 segundos 
+
+Decision numero 39
+Origen: Aula 238
+Destino: Oficina 339
+Movimiento empleado: CAMINAR
+Bateria Remanente: 63.333332
+Tiempo Acumulado: 3880.0 segundos 
+
+Decision numero 40
+Origen: Oficina 339
+Destino: Hall 40
+Movimiento empleado: CAMINAR
+Bateria Remanente: 61.333332
+Tiempo Acumulado: 4000.0 segundos 
+
+Decision numero 41
+Origen: Hall 40
+Destino: Aula 141
+Movimiento empleado: CAMINAR
+Bateria Remanente: 61.2
+Tiempo Acumulado: 4080.0 segundos 
+
+Decision numero 42
+Origen: Aula 141
+Destino: Aula 242
+Movimiento empleado: CAMINAR
+Bateria Remanente: 61.1
+Tiempo Acumulado: 4170.0 segundos 
+
+Decision numero 43
+Origen: Aula 242
+Destino: Oficina 343
+Movimiento empleado: CAMINAR
+Bateria Remanente: 59.433334
+Tiempo Acumulado: 4270.0 segundos 
+
+Decision numero 44
+Origen: Oficina 343
+Destino: Hall 44
+Movimiento empleado: CAMINAR
+Bateria Remanente: 57.6
+Tiempo Acumulado: 4380.0 segundos 
+
+Decision numero 45
+Origen: Hall 44
+Destino: Aula 145
+Movimiento empleado: CAMINAR
+Bateria Remanente: 57.6
+Tiempo Acumulado: 4500.0 segundos 
+
+Decision numero 46
+Origen: Aula 145
+Destino: Aula 246
+Movimiento empleado: CAMINAR
+Bateria Remanente: 58.466667
+Tiempo Acumulado: 4580.0 segundos 
+
+Decision numero 47
+Origen: Aula 246
+Destino: Oficina 347
+Movimiento empleado: CAMINAR
+Bateria Remanente: 56.966667
+Tiempo Acumulado: 4670.0 segundos 
+
+Decision numero 48
+Origen: Oficina 347
+Destino: Hall 48
+Movimiento empleado: CAMINAR
+Bateria Remanente: 55.3
+Tiempo Acumulado: 4770.0 segundos 
+
+Decision numero 49
+Origen: Hall 48
+Destino: Aula 149
+Movimiento empleado: CAMINAR
+Bateria Remanente: 56.266666
+Tiempo Acumulado: 4880.0 segundos 
+
+Decision numero 50
+Origen: Aula 149
+Destino: Aula 250
+Movimiento empleado: CAMINAR
+Bateria Remanente: 55.466667
+Tiempo Acumulado: 5000.0 segundos 
+
+Decision numero 51
+Origen: Aula 250
+Destino: Oficina 351
+Movimiento empleado: CAMINAR
+Bateria Remanente: 54.133335
+Tiempo Acumulado: 5080.0 segundos 
+
+Decision numero 52
+Origen: Oficina 351
+Destino: Hall 52
+Movimiento empleado: CAMINAR
+Bateria Remanente: 52.633335
+Tiempo Acumulado: 5170.0 segundos 
+
+Decision numero 53
+Origen: Hall 52
+Destino: Aula 153
+Movimiento empleado: CAMINAR
+Bateria Remanente: 52.766666
+Tiempo Acumulado: 5270.0 segundos 
+
+Decision numero 54
+Origen: Aula 153
+Destino: Aula 254
+Movimiento empleado: CAMINAR
+Bateria Remanente: 52.933334
+Tiempo Acumulado: 5380.0 segundos 
+
+Decision numero 55
+Origen: Aula 254
+Destino: Oficina 355
+Movimiento empleado: CAMINAR
+Bateria Remanente: 50.933334
+Tiempo Acumulado: 5500.0 segundos 
+
+Decision numero 56
+Origen: Oficina 355
+Destino: Hall 56
+Movimiento empleado: CAMINAR
+Bateria Remanente: 49.6
+Tiempo Acumulado: 5580.0 segundos 
+
+Decision numero 57
+Origen: Hall 56
+Destino: Aula 157
+Movimiento empleado: CAMINAR
+Bateria Remanente: 50.7
+Tiempo Acumulado: 5670.0 segundos 
+
+Decision numero 58
+Origen: Aula 157
+Destino: Aula 258
+Movimiento empleado: CAMINAR
+Bateria Remanente: 51.833332
+Tiempo Acumulado: 5770.0 segundos 
+
+Decision numero 59
+Origen: Aula 258
+Destino: Oficina 359
+Movimiento empleado: CAMINAR
+Bateria Remanente: 50.0
+Tiempo Acumulado: 5880.0 segundos 
+
+Decision numero 60
+Origen: Oficina 359
+Destino: Hall 60
+Movimiento empleado: CAMINAR
+Bateria Remanente: 48.0
+Tiempo Acumulado: 6000.0 segundos 
+
+Decision numero 61
+Origen: Hall 60
+Destino: Aula 161
+Movimiento empleado: CAMINAR
+Bateria Remanente: 48.266666
+Tiempo Acumulado: 6080.0 segundos 
+
+Decision numero 62
+Origen: Aula 161
+Destino: Aula 262
+Movimiento empleado: CAMINAR
+Bateria Remanente: 48.566666
+Tiempo Acumulado: 6170.0 segundos 
+
+Decision numero 63
+Origen: Aula 262
+Destino: Oficina 363
+Movimiento empleado: CAMINAR
+Bateria Remanente: 46.9
+Tiempo Acumulado: 6270.0 segundos 
+
+Decision numero 64
+Origen: Oficina 363
+Destino: Hall 64
+Movimiento empleado: CAMINAR
+Bateria Remanente: 45.066666
+Tiempo Acumulado: 6380.0 segundos 
+
+Decision numero 65
+Origen: Hall 64
+Destino: Aula 165
+Movimiento empleado: CAMINAR
+Bateria Remanente: 45.466667
+Tiempo Acumulado: 6500.0 segundos 
+
+Decision numero 66
+Origen: Aula 165
+Destino: Aula 266
+Movimiento empleado: CAMINAR
+Bateria Remanente: 46.733334
+Tiempo Acumulado: 6580.0 segundos 
+
+Decision numero 67
+Origen: Aula 266
+Destino: Oficina 367
+Movimiento empleado: CAMINAR
+Bateria Remanente: 45.233334
+Tiempo Acumulado: 6670.0 segundos 
+
+Decision numero 68
+Origen: Oficina 367
+Destino: Hall 68
+Movimiento empleado: CAMINAR
+Bateria Remanente: 43.566666
+Tiempo Acumulado: 6770.0 segundos 
+
+Decision numero 69
+Origen: Hall 68
+Destino: Aula 169
+Movimiento empleado: CAMINAR
+Bateria Remanente: 44.933334
+Tiempo Acumulado: 6880.0 segundos 
+
+Decision numero 70
+Origen: Aula 169
+Destino: Aula 633
+Movimiento empleado: CAMINAR
+Bateria Remanente: 45.333332
+Tiempo Acumulado: 7000.0 segundos 
+

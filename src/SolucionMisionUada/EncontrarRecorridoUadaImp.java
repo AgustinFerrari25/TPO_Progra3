@@ -1,10 +1,6 @@
 package SolucionMisionUada;
 
-import MisionUada.Decision;
-import MisionUada.Desplazamiento;
-import MisionUada.EncontrarRecorridoUada;
-import MisionUada.Estacion;
-import MisionUada.Movimiento;
+import MisionUada.*;
 
 import java.util.ArrayList;
 
@@ -21,70 +17,54 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
     private long podaPorBateria;
     private long podaPorRepetido;
     private long podaPorNoObligatorIOS;
-@Override
-    public ArrayList<Decision> encontrarSecuenciaRecorridoUada(
-            int bateriaInicial,
-            Estacion origen,
-            ArrayList<Estacion> lugaresDisponibles,
-            ArrayList<Estacion> lugaresObligatorios,
-            ArrayList<Desplazamiento> desplazamientos) {
+
+    @Override
+    public ArrayList<Decision> encontrarSecuenciaRecorridoUada(int bateriaInicial, Estacion origen, ArrayList<Estacion> lugaresDisponibles, ArrayList<Estacion> lugaresObligatorios, ArrayList<Desplazamiento> desplazamientos) {
 
 
-    this.estacionFinal = origen;
-    this.mejorSecuencia = new ArrayList<>();
-    this.tiempoMinimoLogrado = Double.MAX_VALUE; // Equivale a "infinito"
-    this.todosLosDesplazamientos = desplazamientos;
-    this.podaPorTiempo = 0;
-    this.podaPorBateria = 0;
-    this.podaPorRepetido = 0;
-    this.podaPorNoObligatorIOS = 0;
-    ArrayList<Decision> recorridoActual = new ArrayList<>();
-    ArrayList<Estacion> obligatoriosRestantes = new ArrayList<>(lugaresObligatorios);
-    ArrayList<Estacion> visitados = new ArrayList<>();
-    visitados.add(origen);
+        this.estacionFinal = origen;
+        this.mejorSecuencia = new ArrayList<>();
+        this.tiempoMinimoLogrado = Double.MAX_VALUE; // Equivale a "infinito"
+        this.todosLosDesplazamientos = desplazamientos;
+        this.podaPorTiempo = 0;
+        this.podaPorBateria = 0;
+        this.podaPorRepetido = 0;
+        this.podaPorNoObligatorIOS = 0;
+        ArrayList<Decision> recorridoActual = new ArrayList<>();
+        ArrayList<Estacion> obligatoriosRestantes = new ArrayList<>(lugaresObligatorios);
+        ArrayList<Estacion> visitados = new ArrayList<>();
+        visitados.add(origen);
 
 
-    misionUada(
-            bateriaInicial,
-            origen, // Estación actual
-            recorridoActual,
-            obligatoriosRestantes,
-            visitados,
-            0.0 // Tiempo acumulado inicial
-    );
-    System.out.println("= REPORTE DE PODAS =");
-    System.out.println("-> Caminos podados por Batería: " + this.podaPorBateria);
-    System.out.println("-> Caminos podados por Tiempo (peor a la mejor): " + this.podaPorTiempo);
-    System.out.println("-> Caminos podados por Lugar Repetido: " + this.podaPorRepetido);
-    System.out.println("-> Caminos podados por Fin sin Obligatorios: " + this.podaPorNoObligatorIOS);
-    System.out.println("======================");
-    System.out.println("= FIN DE MISION UADA =");
+        misionUada(bateriaInicial, origen, // Estación actual
+                recorridoActual, obligatoriosRestantes, visitados, 0.0 // Tiempo acumulado inicial
+        );
+        System.out.println("= REPORTE DE PODAS =");
+        System.out.println("-> Caminos podados por Batería: " + this.podaPorBateria);
+        System.out.println("-> Caminos podados por Tiempo (peor a la mejor): " + this.podaPorTiempo);
+        System.out.println("-> Caminos podados por Lugar Repetido: " + this.podaPorRepetido);
+        System.out.println("-> Caminos podados por Fin sin Obligatorios: " + this.podaPorNoObligatorIOS);
+        System.out.println("======================");
+        System.out.println("= FIN DE MISION UADA =");
 
-    if (mejorSecuencia.isEmpty()) {
-        System.out.println("No se encontró una solución válida.");
-    } else {
-        Decision ultimaDecision = mejorSecuencia.get(mejorSecuencia.size() - 1);
-        System.out.println("Mejor tiempo encontrado: " + this.tiempoMinimoLogrado + "s");
-        System.out.println("Batería restante final: " + ultimaDecision.getBateriaRemanente() + "%");
+        if (mejorSecuencia.isEmpty()) {
+            System.out.println("No se encontró una solución válida.");
+        } else {
+            Decision ultimaDecision = mejorSecuencia.get(mejorSecuencia.size() - 1);
+            System.out.println("Mejor tiempo encontrado: " + this.tiempoMinimoLogrado + "s");
+            System.out.println("Batería restante final: " + ultimaDecision.getBateriaRemanente() + "%");
+        }
+        return this.mejorSecuencia;
     }
-    return this.mejorSecuencia;
-}
 
 
-    private void misionUada(double bateriaActual,
-                            Estacion estacionActual,
-                            ArrayList<Decision> recorridoActual,
-                            ArrayList<Estacion> obligatoriosRestantes,
-                            ArrayList<Estacion> visitados,
-                            double tiempoAcumulado){
+    private void misionUada(double bateriaActual, Estacion estacionActual, ArrayList<Decision> recorridoActual, ArrayList<Estacion> obligatoriosRestantes, ArrayList<Estacion> visitados, double tiempoAcumulado) {
 
 
         for (Desplazamiento d : this.todosLosDesplazamientos) {
 
 
             if (d.getOrigen().equals(estacionActual)) {
-
-
 
 
                 for (Movimiento m : d.getMovimientosPermitidos()) {
@@ -111,8 +91,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
                         }
 
 
-
-
                         if (siguienteEstacion.equals(this.estacionFinal)) {
 
 
@@ -123,21 +101,13 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
                                     this.tiempoMinimoLogrado = nuevoTiempo;
 
-
-                                    Decision ultimaDecision = new Decision(
-                                            estacionActual,
-                                            siguienteEstacion,
-                                            m,
-                                            (int) Math.round(nuevaBateria),
-                                            (int) Math.round(nuevoTiempo)
-                                    );
+                                    Decision ultimaDecision = new Decision(estacionActual, siguienteEstacion, m, (float) nuevaBateria, (float) nuevoTiempo);
                                     recorridoActual.add(ultimaDecision);
                                     this.mejorSecuencia = new ArrayList<>(recorridoActual);
 
-
                                     recorridoActual.remove(recorridoActual.size() - 1);
                                 }
-                            }else {
+                            } else {
                                 // --- PODA 4: LLEGÓ A LA META PERO FALTAN OBLIGATORIOS ---
                                 this.podaPorNoObligatorIOS++;
                             }
@@ -145,15 +115,7 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
                         } else if (!visitados.contains(siguienteEstacion)) {
 
-
-
-                            Decision decision = new Decision(
-                                    estacionActual,
-                                    siguienteEstacion,
-                                    m,
-                                    (int) Math.round(nuevaBateria),
-                                    (int) Math.round(nuevoTiempo)
-                            );
+                            Decision decision = new Decision(estacionActual, siguienteEstacion, m, (float) nuevaBateria, (float) nuevoTiempo);
                             recorridoActual.add(decision);
                             visitados.add(siguienteEstacion);
 
@@ -165,14 +127,7 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
                             }
 
 
-                            misionUada(
-                                    nuevaBateria,
-                                    siguienteEstacion,
-                                    recorridoActual,
-                                    obligatoriosRestantes,
-                                    visitados,
-                                    nuevoTiempo
-                            );
+                            misionUada(nuevaBateria, siguienteEstacion, recorridoActual, obligatoriosRestantes, visitados, nuevoTiempo);
 
 
                             recorridoActual.remove(recorridoActual.size() - 1);
@@ -182,13 +137,13 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
                             if (fueEliminado) {
                                 obligatoriosRestantes.add(siguienteEstacion);
                             }
-                        }else {
+                        } else {
                             // --- PODA 3: LUGAR REPETIDO ---
                             // (El else del 'if (!visitados.contains(siguienteEstacion))')
                             this.podaPorRepetido++;
                         }
 
-                    }else {
+                    } else {
                         // --- PODA 1 Y 2: BATERÍA O TIEMPO ---
                         // (El else del 'if (nuevaBateria > 0 && nuevoTiempo < this.tiempoMinimoLogrado)')
 
@@ -208,8 +163,8 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
 
     /**
-    * Funciones auxiliaress que cree
-    * */
+     * Funciones auxiliaress que cree
+     */
 
     private int SumaDeDigitos(int n) {
         int suma = 0;
@@ -244,7 +199,7 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
 
     private double[] CalcularGastoYTiempo(Desplazamiento desplazamiento, Movimiento movimiento) {
-        double tiempo = (double) desplazamiento.getTiempoBase();
+        double tiempo = desplazamiento.getTiempoBase();
         double gasto = 0.0;
 
         switch (movimiento) {

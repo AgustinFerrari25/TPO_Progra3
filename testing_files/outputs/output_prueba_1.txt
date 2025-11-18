@@ -1,0 +1,44 @@
+== MEJOR SECUENCIA DE DECISIONES ENCONTRADA ==
+
+Decision numero 1
+Origen: Aula 633
+Destino: Aula 101
+Movimiento empleado: CAMINAR
+Bateria Remanente: 98.4
+Tiempo Acumulado: 120.0 segundos 
+
+Decision numero 2
+Origen: Aula 101
+Destino: Aula 102
+Movimiento empleado: CAMINAR
+Bateria Remanente: 97.5
+Tiempo Acumulado: 210.0 segundos 
+
+Decision numero 3
+Origen: Aula 102
+Destino: Aula 103
+Movimiento empleado: CAMINAR
+Bateria Remanente: 96.96667
+Tiempo Acumulado: 290.0 segundos 
+
+Decision numero 4
+Origen: Aula 103
+Destino: Aula 104
+Movimiento empleado: CAMINAR
+Bateria Remanente: 96.8
+Tiempo Acumulado: 360.0 segundos 
+
+Decision numero 5
+Origen: Aula 104
+Destino: Aula 201
+Movimiento empleado: CAMINAR
+Bateria Remanente: 96.4
+Tiempo Acumulado: 420.0 segundos 
+
+Decision numero 6
+Origen: Aula 201
+Destino: Aula 633
+Movimiento empleado: CAMINAR
+Bateria Remanente: 97.13333
+Tiempo Acumulado: 520.0 segundos 
+
