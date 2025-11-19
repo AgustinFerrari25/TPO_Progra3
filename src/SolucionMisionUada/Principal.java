@@ -11,12 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Principal {
-
-    /**
-     * MÉTODO MAIN - ¡Ahora solo llama a las pruebas!
-     */
     public static void main(String[] args) {
 
         System.out.println("=== INICIO  PRUEBAS DEL TPO ===");
@@ -70,7 +65,6 @@ public class Principal {
         System.out.println("=== EJECUCIÓN FINALIZADA ===");
         System.out.println("Tiempo de ejecución del algoritmo: " + tiempoDeEjecucionMs + " ms");
 
-
         imprimirSecuenciaDecisiones(secuenciaDecisiones, fOutput);
     }
 
@@ -80,7 +74,6 @@ public class Principal {
         Map<String, Estacion> estacionesMap = new HashMap<>();
 
         try {
-            // --- 1. Leer estaciones.csv ---
             System.out.println("Leyendo " + fEstaciones + "...");
             try (BufferedReader br = new BufferedReader(new FileReader(fEstaciones))) {
                 String line;
@@ -99,7 +92,6 @@ public class Principal {
                 }
             }
 
-            // --- 2. Leer config.txt ---
             System.out.println("Leyendo " + fConfig + "...");
             try (BufferedReader br = new BufferedReader(new FileReader(fConfig))) {
                 String line;
@@ -135,7 +127,6 @@ public class Principal {
                 }
             }
 
-            // --- 3. Leer desplazamientos.csv ---
             System.out.println("Leyendo " + fDesplaz + "...");
             try (BufferedReader br = new BufferedReader(new FileReader(fDesplaz))) {
                 String line;
@@ -209,7 +200,6 @@ public class Principal {
         }
     }
 
-    // Clase interna para guardar el mapa
     private static class MapaDePrueba {
         Estacion origen;
         ArrayList<Estacion> disponibles = new ArrayList<>();
