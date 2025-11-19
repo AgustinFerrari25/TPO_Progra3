@@ -11,7 +11,7 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
     // Variables para no tener que pasarlas en cada llamada recursiva
     private ArrayList<Desplazamiento> todosLosDesplazamientos;
-    private Estacion estacionFinal; // El Aula 633
+    private Estacion estacionFinal; 
 
     private long podaPorTiempo;
     private long podaPorBateria;
@@ -21,10 +21,9 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
     @Override
     public ArrayList<Decision> encontrarSecuenciaRecorridoUada(int bateriaInicial, Estacion origen, ArrayList<Estacion> lugaresDisponibles, ArrayList<Estacion> lugaresObligatorios, ArrayList<Desplazamiento> desplazamientos) {
 
-
         this.estacionFinal = origen;
         this.mejorSecuencia = new ArrayList<>();
-        this.tiempoMinimoLogrado = Double.MAX_VALUE; // Equivale a "infinito"
+        this.tiempoMinimoLogrado = Double.MAX_VALUE; // infinito
         this.todosLosDesplazamientos = desplazamientos;
         this.podaPorTiempo = 0;
         this.podaPorBateria = 0;
@@ -57,18 +56,13 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
         return this.mejorSecuencia;
     }
 
-
     private void misionUada(double bateriaActual, Estacion estacionActual, ArrayList<Decision> recorridoActual, ArrayList<Estacion> obligatoriosRestantes, ArrayList<Estacion> visitados, double tiempoAcumulado) {
-
 
         for (Desplazamiento d : this.todosLosDesplazamientos) {
 
-
             if (d.getOrigen().equals(estacionActual)) {
 
-
                 for (Movimiento m : d.getMovimientosPermitidos()) {
-
 
                     double[] calculos = CalcularGastoYTiempo(d, m);
                     double tiempoMovimiento = calculos[0];
@@ -76,7 +70,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
                     double nuevoTiempo = tiempoAcumulado + tiempoMovimiento;
                     double nuevaBateria = bateriaActual - gastoBateria;
-
 
                     if (nuevaBateria > 0 && nuevoTiempo < this.tiempoMinimoLogrado) {
                         Estacion siguienteEstacion = d.getDestino();
@@ -89,7 +82,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
                         } else {
                             nuevaBateria += recarga;
                         }
-
 
                         if (siguienteEstacion.equals(this.estacionFinal)) {
 
@@ -108,10 +100,8 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
                                     recorridoActual.remove(recorridoActual.size() - 1);
                                 }
                             } else {
-                                // --- PODA 4: LLEGÓ A LA META PERO FALTAN OBLIGATORIOS ---
                                 this.podaPorNoObligatorIOS++;
                             }
-
 
                         } else if (!visitados.contains(siguienteEstacion)) {
 
@@ -126,32 +116,23 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
                                 fueEliminado = true;
                             }
 
-
                             misionUada(nuevaBateria, siguienteEstacion, recorridoActual, obligatoriosRestantes, visitados, nuevoTiempo);
-
 
                             recorridoActual.remove(recorridoActual.size() - 1);
                             visitados.remove(siguienteEstacion);
-
 
                             if (fueEliminado) {
                                 obligatoriosRestantes.add(siguienteEstacion);
                             }
                         } else {
-                            // --- PODA 3: LUGAR REPETIDO ---
-                            // (El else del 'if (!visitados.contains(siguienteEstacion))')
                             this.podaPorRepetido++;
                         }
 
                     } else {
-                        // --- PODA 1 Y 2: BATERÍA O TIEMPO ---
-                        // (El else del 'if (nuevaBateria > 0 && nuevoTiempo < this.tiempoMinimoLogrado)')
-
 
                         if (nuevaBateria <= 0) {
                             this.podaPorBateria++;
                         } else if (nuevoTiempo >= this.tiempoMinimoLogrado) {
-                            // Solo contamos la poda por tiempo si la batería estaba OK
                             this.podaPorTiempo++;
                         }
                     }
@@ -160,7 +141,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
             }
         }
     }
-
 
     /**
      * Funciones auxiliaress que cree
@@ -176,7 +156,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
         while (num > 0) {
             int restoDelNumero = num / 10;
-
             int ultimoDigito = num - (10 * restoDelNumero);
 
             suma = suma + ultimoDigito;
@@ -184,7 +163,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
         }
         return suma;
     }
-
 
     private double RecargarSiEsAula(Estacion estacion) {
         if (estacion.getEsAula()) {
@@ -196,7 +174,6 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
             return 0.0;
         }
     }
-
 
     private double[] CalcularGastoYTiempo(Desplazamiento desplazamiento, Movimiento movimiento) {
         double tiempo = desplazamiento.getTiempoBase();
@@ -220,5 +197,4 @@ public class EncontrarRecorridoUadaImp implements EncontrarRecorridoUada {
 
         return new double[]{tiempo, gasto};
     }
-
 }
